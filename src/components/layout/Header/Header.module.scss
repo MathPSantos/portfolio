@@ -1,0 +1,54 @@
+@import "@styles/tokens/colors", "@styles/tokens/spacing";
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  padding-left: $spacing-5;
+  padding-right: $spacing-5;
+
+  z-index: 5;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    color: $colors-gray-400;
+  }
+}
+
+.burger {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  cursor: pointer;
+
+  div {
+    height: 2px;
+    width: 100%;
+
+    background-color: $colors-gray-900;
+  }
+}

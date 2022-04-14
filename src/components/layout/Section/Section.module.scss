@@ -1,0 +1,8 @@
+@import "@styles/tokens/spacing";
+
+.section {
+  width: 100%;
+
+  padding-top: $spacing-32;
+  padding-bottom: $spacing-32;
+}
