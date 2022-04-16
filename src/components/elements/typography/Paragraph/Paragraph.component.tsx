@@ -1,16 +1,16 @@
 import { ReactNode } from "react";
-import { Text, TextProps } from "@core/shared/components";
+import { TextComponent, TextComponentProps } from "@core/shared/components";
 
 import styles from "./Paragraph.module.scss";
 
-export interface ParagraphProps extends TextProps {
+export interface ParagraphProps extends TextComponentProps {
   children: ReactNode;
 }
 
 export function Paragraph({ children, ...props }: ParagraphProps) {
   return (
-    <Text className={styles.paragraph} {...props}>
+    <TextComponent className={styles.paragraph} {...props}>
       {children}
-    </Text>
+    </TextComponent>
   );
 }

@@ -1,12 +1,18 @@
 import { Header, Main, Section, HeroSection } from "@components/layout";
-import { Heading, Paragraph, Strong } from "@components/elements";
+import { Heading, Paragraph, Strong } from "@components/elements/typography";
+import { Button } from "@components/elements/forms";
 import { Kbd } from "@components/elements/data-display";
 
 import { MAX_WIDTH_TEXT } from "@styles/contants";
+import { OwnLeftArrowIcon } from "@core/shared/icons";
+import Head from "next/head";
 
 function Home() {
   return (
     <>
+      <Head>
+        <title>math.dev</title>
+      </Head>
       <Header />
       <Main>
         <HeroSection
@@ -43,6 +49,9 @@ function Home() {
             building and teaching accessible, inclusive and awesome products and
             digital experiences for everyone.
           </Paragraph>
+          <Button mt={32} rightIcon={<OwnLeftArrowIcon />}>
+            Learn more about me
+          </Button>
         </Section>
 
         <Section>

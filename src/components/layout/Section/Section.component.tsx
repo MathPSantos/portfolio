@@ -1,16 +1,16 @@
 import { ReactNode } from "react";
-import { Box, BoxProps } from "@core/shared/components";
+import { BoxComponent, BoxComponentProps } from "@core/shared/components";
 
 import styles from "./Section.module.scss";
 
-interface SectionProps extends BoxProps {
+interface SectionProps extends BoxComponentProps {
   children: ReactNode;
 }
 
 export function Section({ children, ...props }: SectionProps) {
   return (
-    <Box as="section" className={styles.section} {...props}>
+    <BoxComponent as="section" className={styles.section} {...props}>
       {children}
-    </Box>
+    </BoxComponent>
   );
 }

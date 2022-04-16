@@ -1,0 +1,45 @@
+@import "@styles/tokens/colors", "@/styles/tokens/fonts";
+
+.button {
+  height: 56px;
+  padding-inline-start: 32px;
+  padding-inline-end: 32px;
+
+  border: 1px solid transparent;
+  outline: 2px solid transparent;
+
+  border-radius: 20px;
+
+  font-family: $fonts-heading;
+  font-weight: 600;
+  font-size: 1.125rem;
+
+  transition: all 0.2s;
+
+  cursor: pointer;
+
+  background-color: $colors-gray-900;
+  color: $colors-white;
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  &:hover:enabled,
+  &:focus:enabled,
+  &:active:enabled {
+    scale: 1.15;
+  }
+
+  &:focus:enabled,
+  &:active:enabled {
+    box-shadow: 0px 0px 0px 2px $colors-gray-200;
+  }
+}
+
+.primary {
+  --btn-accent-color: $colors-gray-900;
+  --btn-font-color: $colors-white;
+  --btn-focus-color: $colors-gray-200;
+}
