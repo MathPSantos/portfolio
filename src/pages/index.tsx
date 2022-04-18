@@ -1,11 +1,34 @@
-import { Header, Main, Section, HeroSection } from "@components/layout";
-import { Heading, Paragraph, Strong } from "@components/elements/typography";
-import { Button } from "@components/elements/forms";
-import { Kbd } from "@components/elements/data-display";
+import Head from "next/head";
+
+import {
+  Header,
+  Main,
+  Section,
+  HeroSection,
+  Splitshow,
+} from "@components/layout";
+import { ProjectItem } from "@components/widgets";
+import { Heading, Paragraph, Strong, Button, Kbd } from "@components/elements";
+
+import { OwnLeftArrowIcon } from "@core/shared/icons";
 
 import { MAX_WIDTH_TEXT } from "@styles/contants";
-import { OwnLeftArrowIcon } from "@core/shared/icons";
-import Head from "next/head";
+import { Project } from "@core/types/projects/Project";
+
+const PROJECTS_DATA: Project[] = [
+  {
+    title: "financee.",
+    description:
+      "A mobile app to help you centralize your incomes, withdraws and investments.",
+    tags: ["Product", "Design", "Code", "Mobile"],
+  },
+  {
+    title: "Taco app",
+    description:
+      "Platform made to help nutricionists to consult the Brazilian Table of Food Composition (TACO).",
+    tags: ["Design", "Code", "Mobile", "Web"],
+  },
+];
 
 function Home() {
   return (
@@ -26,12 +49,12 @@ function Home() {
               <Strong>Infosys</Strong>.
             </>
           }
-          // posDescElement={
-          //   <Paragraph mt="72">
-          //     Press <Kbd>tab</Kbd> or <Kbd>ctrl</Kbd> + <Kbd>...</Kbd> to
-          //     interect with the page
-          //   </Paragraph>
-          // }
+          PosDescElement={
+            <Paragraph mt="72">
+              Press <Kbd>tab</Kbd> or <Kbd>ctrl</Kbd> + <Kbd>...</Kbd> to
+              interect with the page
+            </Paragraph>
+          }
         />
 
         <Section>
@@ -60,6 +83,17 @@ function Home() {
             As a problem solver, I’m always searching new things to create. You
             can see some projects I’ve be working on in the section bellow.
           </Paragraph>
+
+          <Splitshow
+            mt="60"
+            isAlined
+            items={PROJECTS_DATA}
+            ChildComponent={ProjectItem}
+          />
+
+          <Button mt={32} ml="auto" rightIcon={<OwnLeftArrowIcon />}>
+            See all projects
+          </Button>
         </Section>
 
         <Section>

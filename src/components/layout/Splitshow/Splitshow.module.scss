@@ -1,0 +1,20 @@
+.splitshow {
+  --item-padding: 12px;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    flex: 1;
+
+    &Left {
+      padding-right: var(--item-padding);
+    }
+
+    &Right {
+      padding-left: var(--item-padding);
+    }
+  }
+}

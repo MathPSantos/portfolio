@@ -9,14 +9,14 @@ interface HeroSectionProps {
   preTitle?: string;
   title: string;
   description: string | JSX.Element;
-  posDescElement?: JSX.Element;
+  PosDescElement?: JSX.Element;
 }
 
 export function HeroSection({
   preTitle,
   title,
   description,
-  posDescElement,
+  PosDescElement,
 }: HeroSectionProps) {
   return (
     <div className={styles.container}>
@@ -28,7 +28,7 @@ export function HeroSection({
           {description}
         </Paragraph>
 
-        {posDescElement}
+        {PosDescElement}
       </Section>
     </div>
   );

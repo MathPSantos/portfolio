@@ -1,1 +1,1 @@
-export { Kbd } from "./Kbd/Kbd.component";
+export * from "./Kbd/Kbd.component";

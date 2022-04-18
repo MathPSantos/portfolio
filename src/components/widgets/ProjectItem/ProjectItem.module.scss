@@ -1,0 +1,18 @@
+@import "@styles/tokens/colors";
+
+.projectItem {
+  &__image {
+    height: 554px;
+    background-color: $colors-gray-100;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    margin-top: 36px;
+  }
+}
