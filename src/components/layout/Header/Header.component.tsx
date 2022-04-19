@@ -1,9 +1,8 @@
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { Heading } from "@components/elements";
+import { Heading, Link } from "@components/elements";
 import { Stack } from "../Stack/Stack.component";
 
 import { MoonIcon, GlobeIcon } from "../../../core/shared/icons";
@@ -58,22 +57,38 @@ export function Header() {
                 <div className={styles.nav__mainLinks}>
                   <Heading level={5}>Social</Heading>
 
-                  <Stack flexDirection="column" gap={16}>
-                    <Link href="/">Codesandbox</Link>
-                    <Link href="/">Github</Link>
-                    <Link href="/">LinkedIn</Link>
-                    <Link href="/">Youtube</Link>
+                  <Stack flexDirection="column" gap={12}>
+                    <Link href="/">
+                      <a>Codesandbox</a>
+                    </Link>
+                    <Link href="/">
+                      <a>Github</a>
+                    </Link>
+                    <Link href="/">
+                      <a>LinkedIn</a>
+                    </Link>
+                    <Link href="/">
+                      <a>Youtube</a>
+                    </Link>
                   </Stack>
                 </div>
 
                 <div className={styles.nav__mainLinks}>
                   <Heading level={5}>Menu</Heading>
 
-                  <Stack flexDirection="column" gap={16}>
-                    <Link href="/">Home</Link>
-                    <Link href="/">About</Link>
-                    <Link href="/">Projects</Link>
-                    <Link href="/">Bookmarks</Link>
+                  <Stack flexDirection="column" gap={12}>
+                    <Link href="/" size="xl">
+                      <a>Home</a>
+                    </Link>
+                    <Link href="/" size="xl">
+                      <a>About</a>
+                    </Link>
+                    <Link href="/" size="xl">
+                      <a>Projects</a>
+                    </Link>
+                    <Link href="/" size="xl">
+                      <a>Bookmarks</a>
+                    </Link>
                   </Stack>
                 </div>
               </div>

@@ -1,6 +1,4 @@
-import Link from "next/link";
-
-import { Heading, Paragraph } from "@components/elements";
+import { Heading, Link, Paragraph } from "@components/elements";
 import { Stack } from "../Stack/Stack.component";
 
 import styles from "./Footer.module.scss";
@@ -21,17 +19,27 @@ export function Footer() {
             <div>
               <Heading level={6}>Pages</Heading>
               <Stack flexDirection="column">
-                <Link href="/">Home</Link>
-                <Link href="/">About</Link>
-                <Link href="/">Bookmarks</Link>
-                <Link href="/">Projects</Link>
+                <Link href="/">
+                  <a>Home</a>
+                </Link>
+                <Link href="/">
+                  <a>About</a>
+                </Link>
+                <Link href="/">
+                  <a>Bookmarks</a>
+                </Link>
+                <Link href="/">
+                  <a>Projects</a>
+                </Link>
               </Stack>
             </div>
 
             <div>
               <Heading level={6}>Contact</Heading>
               <Stack flexDirection="column">
-                <Link href="/">Send a email</Link>
+                <Link href="/">
+                  <a>Senda email</a>
+                </Link>
               </Stack>
             </div>
           </div>
