@@ -11,9 +11,10 @@ import { ProjectItem } from "@components/widgets";
 import { Heading, Paragraph, Strong, Button, Kbd } from "@components/elements";
 
 import { OwnLeftArrowIcon } from "@core/shared/icons";
+import { BoxComponent } from "@core/shared/components";
+import { Project } from "@core/types/projects/Project";
 
 import { MAX_WIDTH_TEXT } from "@styles/contants";
-import { Project } from "@core/types/projects/Project";
 
 const PROJECTS_DATA: Project[] = [
   {
@@ -91,9 +92,11 @@ function Home() {
             ChildComponent={ProjectItem}
           />
 
-          <Button mt={32} ml="auto" rightIcon={<OwnLeftArrowIcon />}>
-            See all projects
-          </Button>
+          <BoxComponent d="flex" justifyContent="center">
+            <Button mt={72} mx="auto" rightIcon={<OwnLeftArrowIcon />}>
+              See all projects
+            </Button>
+          </BoxComponent>
         </Section>
 
         <Section>
