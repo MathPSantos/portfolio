@@ -6,6 +6,7 @@ import {
   Section,
   HeroSection,
   Splitshow,
+  Footer,
 } from "@components/layout";
 import { ProjectItem } from "@components/widgets";
 import { Heading, Paragraph, Strong, Button, Kbd } from "@components/elements";
@@ -99,7 +100,7 @@ function Home() {
           </BoxComponent>
         </Section>
 
-        <Section>
+        <Section mt={120} mb={200}>
           <Heading>Let’s talk?</Heading>
           <Paragraph mt="24" maxW={MAX_WIDTH_TEXT}>
             My inbox is always open! Have a question or only want to talk about
@@ -108,6 +109,8 @@ function Home() {
           </Paragraph>
         </Section>
       </Main>
+
+      <Footer />
     </>
   );
 }

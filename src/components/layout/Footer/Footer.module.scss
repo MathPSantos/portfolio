@@ -1,0 +1,46 @@
+@import "@styles/tokens/colors", "@styles/tokens/spacing";
+
+.footer {
+  padding-left: $spacing-5;
+  padding-right: $spacing-5;
+
+  border-top: 1px solid $colors-gray-50;
+
+  &__content {
+    max-width: $spacing-max-width;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-top: 92px;
+    padding-bottom: 92px;
+  }
+
+  &__main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &Links {
+      display: flex;
+      align-items: flex-start;
+
+      gap: 102px;
+    }
+  }
+
+  &__additional {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    margin-top: 120px;
+
+    color: $colors-gray-400;
+    font-size: 0.875rem;
+
+    span {
+      text-decoration: underline;
+    }
+  }
+}

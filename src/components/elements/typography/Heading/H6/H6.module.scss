@@ -1,0 +1,9 @@
+@import "@styles/tokens/fonts", "@styles/tokens/colors";
+
+.h6 {
+  font-size: 0.75rem;
+  font-family: $fonts-body;
+  font-weight: 500;
+
+  color: $colors-gray-300;
+}
