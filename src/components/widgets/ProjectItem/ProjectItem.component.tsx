@@ -23,7 +23,7 @@ export function ProjectItem({ data }: ProjectItemProps) {
         <Paragraph mt="12" mb="16">
           {description}
         </Paragraph>
-        <Stack gap={8}>
+        <Stack gap={8} flexWrap="wrap">
           {tags?.map((tag, index) => (
             <Tag key={index} variant={index === 0 ? "primary" : "secondary"}>
               {tag}

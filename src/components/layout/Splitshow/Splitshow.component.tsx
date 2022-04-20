@@ -28,16 +28,14 @@ export function Splitshow<T>({
 
   return (
     <BoxComponent className={styles.splitshow} {...props}>
-      <div
-        className={`${styles.splitshow__item} ${styles.splitshow__itemLeft}`}
-      >
+      <div className={styles.splitshow__item}>
         {leftItems.map((item, index) => (
           <ChildComponent key={index} data={item} />
         ))}
       </div>
       <div
         style={{ marginTop: isAlined ? "0" : "120px" }}
-        className={`${styles.splitshow__item} ${styles.splitshow__itemRight}`}
+        className={styles.splitshow__item}
       >
         {rightItems.map((item, index) => (
           <ChildComponent key={index} data={item} />

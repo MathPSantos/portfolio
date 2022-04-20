@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import NextLink from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { EmailContact, Heading, Link } from "@components/elements";
@@ -8,6 +9,7 @@ import { Stack } from "../Stack/Stack.component";
 import { MoonIcon, GlobeIcon } from "../../../core/shared/icons";
 
 import styles from "./Header.module.scss";
+import { HEADER_PAGES, HEADER_SOCIALS } from "./Header.data";
 
 export function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -20,12 +22,16 @@ export function Header() {
     <header className={styles.container}>
       <div className={styles.wrappper}>
         <div className={styles.content}>
-          <Image
-            src="/assets/logo.svg"
-            alt="Math Dev. Logo"
-            height={23}
-            width={38}
-          />
+          <NextLink href="/">
+            <a>
+              <Image
+                src="/assets/logo.svg"
+                alt="Math Dev. Logo"
+                height={23}
+                width={38}
+              />
+            </a>
+          </NextLink>
 
           <div className={styles.actions}>
             <MoonIcon />
@@ -54,18 +60,11 @@ export function Header() {
                 <Heading level={5}>Social</Heading>
 
                 <Stack flexDirection="column" gap={12}>
-                  <Link href="/">
-                    <a>Codesandbox</a>
-                  </Link>
-                  <Link href="/">
-                    <a>Github</a>
-                  </Link>
-                  <Link href="/">
-                    <a>LinkedIn</a>
-                  </Link>
-                  <Link href="/">
-                    <a>Youtube</a>
-                  </Link>
+                  {HEADER_SOCIALS.map((i) => (
+                    <Link key={i.href} href={i.href}>
+                      <a>{i.label}</a>
+                    </Link>
+                  ))}
                 </Stack>
               </div>
 
@@ -73,18 +72,11 @@ export function Header() {
                 <Heading level={5}>Menu</Heading>
 
                 <Stack flexDirection="column" gap={12}>
-                  <Link href="/" size="xl">
-                    <a>Home</a>
-                  </Link>
-                  <Link href="/" size="xl">
-                    <a>About</a>
-                  </Link>
-                  <Link href="/" size="xl">
-                    <a>Projects</a>
-                  </Link>
-                  <Link href="/" size="xl">
-                    <a>Bookmarks</a>
-                  </Link>
+                  {HEADER_PAGES.map((i) => (
+                    <Link key={i.href} href={i.href} size="xl">
+                      <a>{i.label}</a>
+                    </Link>
+                  ))}
                 </Stack>
               </div>
             </div>
