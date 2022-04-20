@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { Heading, Link } from "@components/elements";
+import { EmailContact, Heading, Link } from "@components/elements";
 import { Stack } from "../Stack/Stack.component";
 
 import { MoonIcon, GlobeIcon } from "../../../core/shared/icons";
@@ -45,72 +45,69 @@ export function Header() {
           </div>
         </div>
 
-        <div className={styles.nav}>
-          <div
-            className={[
-              styles.nav__wrapper,
-              isNavOpen ? styles.nav__wrapperOpen : "",
-            ].join(" ")}
-          >
-            <div className={styles.nav__content}>
-              <div className={styles.nav__main}>
-                <div className={styles.nav__mainLinks}>
-                  <Heading level={5}>Social</Heading>
+        <nav
+          className={[styles.nav, isNavOpen ? styles.navOpen : ""].join(" ")}
+        >
+          <div className={styles.nav__content}>
+            <div className={styles.nav__main}>
+              <div className={styles.nav__mainLinks}>
+                <Heading level={5}>Social</Heading>
 
-                  <Stack flexDirection="column" gap={12}>
-                    <Link href="/">
-                      <a>Codesandbox</a>
-                    </Link>
-                    <Link href="/">
-                      <a>Github</a>
-                    </Link>
-                    <Link href="/">
-                      <a>LinkedIn</a>
-                    </Link>
-                    <Link href="/">
-                      <a>Youtube</a>
-                    </Link>
-                  </Stack>
-                </div>
-
-                <div className={styles.nav__mainLinks}>
-                  <Heading level={5}>Menu</Heading>
-
-                  <Stack flexDirection="column" gap={12}>
-                    <Link href="/" size="xl">
-                      <a>Home</a>
-                    </Link>
-                    <Link href="/" size="xl">
-                      <a>About</a>
-                    </Link>
-                    <Link href="/" size="xl">
-                      <a>Projects</a>
-                    </Link>
-                    <Link href="/" size="xl">
-                      <a>Bookmarks</a>
-                    </Link>
-                  </Stack>
-                </div>
+                <Stack flexDirection="column" gap={12}>
+                  <Link href="/">
+                    <a>Codesandbox</a>
+                  </Link>
+                  <Link href="/">
+                    <a>Github</a>
+                  </Link>
+                  <Link href="/">
+                    <a>LinkedIn</a>
+                  </Link>
+                  <Link href="/">
+                    <a>Youtube</a>
+                  </Link>
+                </Stack>
               </div>
 
-              <footer>
-                <Heading level={5}>Get in touch</Heading>
-                {/* TODO: Email contact component */}
-              </footer>
+              <div className={styles.nav__mainLinks}>
+                <Heading level={5}>Menu</Heading>
+
+                <Stack flexDirection="column" gap={12}>
+                  <Link href="/" size="xl">
+                    <a>Home</a>
+                  </Link>
+                  <Link href="/" size="xl">
+                    <a>About</a>
+                  </Link>
+                  <Link href="/" size="xl">
+                    <a>Projects</a>
+                  </Link>
+                  <Link href="/" size="xl">
+                    <a>Bookmarks</a>
+                  </Link>
+                </Stack>
+              </div>
             </div>
+
+            <footer>
+              <Heading level={5}>Get in touch</Heading>
+              <EmailContact mt="12" />
+            </footer>
           </div>
-          <AnimatePresence>
-            {isNavOpen && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={toggleIsNavOpen}
-                className={styles.nav__overflow}
-              />
-            )}
-          </AnimatePresence>
-        </div>
+        </nav>
+
+        {/* Overflow */}
+        <AnimatePresence>
+          {isNavOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={toggleIsNavOpen}
+              className={styles.nav__overflow}
+            />
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );

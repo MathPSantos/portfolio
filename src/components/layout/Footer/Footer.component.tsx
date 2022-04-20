@@ -38,7 +38,7 @@ export function Footer() {
               <Heading level={6}>Contact</Heading>
               <Stack flexDirection="column">
                 <Link href="/">
-                  <a>Senda email</a>
+                  <a>Send a email</a>
                 </Link>
               </Stack>
             </div>

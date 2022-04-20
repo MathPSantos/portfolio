@@ -9,7 +9,14 @@ import {
   Footer,
 } from "@components/layout";
 import { ProjectItem } from "@components/widgets";
-import { Heading, Paragraph, Strong, Button, Kbd } from "@components/elements";
+import {
+  Heading,
+  Paragraph,
+  Strong,
+  Button,
+  Kbd,
+  EmailContact,
+} from "@components/elements";
 
 import { OwnLeftArrowIcon } from "@core/shared/icons";
 import { BoxComponent } from "@core/shared/components";
@@ -107,6 +114,7 @@ function Home() {
             someting? Send a message and I’ll always do my best to get back to
             you!
           </Paragraph>
+          <EmailContact mt="64" />
         </Section>
       </Main>
 
