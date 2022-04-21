@@ -1,0 +1,56 @@
+@import '@styles/tokens/colors';
+
+.spy {
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    list-style: none;
+    padding:  0;
+
+    li {
+      position: relative;
+
+      font-weight: 500;
+      line-height: 26px;
+
+      color: $colors-gray-400;
+
+      transition: all 0.3s ease-in-out;
+
+      cursor: pointer;
+
+      &.active {
+        font-weight: 600;
+        color: $colors-gray-900;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -12px;
+        transform: translateY(-50%);
+        width: 2px;
+        height: 6px;
+        border-radius: 1px;
+        background-color: $colors-gray-900;
+
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+        font-weight: 600;
+        color: $colors-gray-900;
+      }
+    }
+  }
+}

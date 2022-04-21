@@ -27,12 +27,12 @@ export const HEADER_PAGES: HeaderLink[] = [
     label: "About",
     href: "/about",
   },
-  {
-    label: "Projects",
-    href: "/projects",
-  },
-  {
-    label: "Bookmarks",
-    href: "/bookmarks",
-  },
+  // {
+  //   label: "Projects",
+  //   href: "/projects",
+  // },
+  // {
+  //   label: "Bookmarks",
+  //   href: "/bookmarks",
+  // },
 ];

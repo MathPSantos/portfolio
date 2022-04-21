@@ -1,13 +1,16 @@
 import { Heading, Link, Paragraph } from "@components/elements";
+import { BoxComponent, BoxComponentProps } from "@core/shared/components";
 import { Stack } from "../Stack/Stack.component";
 
 import styles from "./Footer.module.scss";
 
-export function Footer() {
+interface FooterProps extends BoxComponentProps {}
+
+export function Footer({...props}: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
+    <BoxComponent as="footer" className={styles.footer} {...props}>
       <div className={styles.footer__content}>
         <div className={styles.footer__main}>
           <div>
@@ -50,6 +53,6 @@ export function Footer() {
           <span>Designed & Built by Matheus Santos</span>
         </div>
       </div>
-    </footer>
+    </BoxComponent>
   );
 }

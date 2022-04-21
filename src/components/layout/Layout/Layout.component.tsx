@@ -17,7 +17,7 @@ export function Layout({ title = "math.dev", children }: LayoutProps) {
       </Head>
       <Header />
       <Main>{children}</Main>
-      <Footer />
+      <Footer mt="128" />
     </>
   );
 }
