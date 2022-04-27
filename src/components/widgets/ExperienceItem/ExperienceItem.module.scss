@@ -1,0 +1,21 @@
+@import "@styles/tokens/colors";
+
+.experience {
+  h3 {
+    font-weight: 600;
+    color: $colors-gray-500;
+
+    margin-bottom: 8px;
+
+    a {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__date {
+    color: $colors-gray-300;
+    font-size: 0.75rem;
+
+    margin-bottom: 28px;
+  }
+}

@@ -1,5 +1,12 @@
-import { Heading, Paragraph, Scrollspy, Strong } from "@components/elements";
+import {
+  Heading,
+  Paragraph,
+  Scrollspy,
+  Strong,
+  Tabs,
+} from "@components/elements";
 import { HeroSection, Layout, Section, Stack } from "@components/layout";
+import { ExperienceItem } from "@components/widgets";
 
 import styles from "./About.module.scss";
 
@@ -23,6 +30,103 @@ const SPY_LIST_ITEMS = [
   {
     id: "future",
     label: "Wishes for the future",
+  },
+];
+
+const WORKED_ITEMS = [
+  {
+    title: "Infosys",
+    content: (
+      <ExperienceItem
+        title="Sytem Engineer"
+        company="Infosys"
+        companyUrl=""
+        initialDate="October 2021"
+        description={
+          <Stack gap={16} flexDirection="column">
+            <Paragraph>
+              Faço parte do desenvolvimento da plataforma Loadshark, solução
+              responsável pelo gerenciamento de frotas da Braskem, a maior
+              produtora de resinas termoplásticas das Américas, e a maior
+              produtora de polipropileno dos Estados Unidos.
+            </Paragraph>
+            <Paragraph>
+              No time atuo como Desenvolvedor Frontend, sendo responsável pelo
+              planejamento, desenvolvimento e suporte dos novos recursos e tendo
+              contato diário com desenvolvedores, designers e gestores.
+            </Paragraph>
+          </Stack>
+        }
+      />
+    ),
+  },
+  {
+    title: "SENAI",
+    content: (
+      <ExperienceItem
+        title="Frontend Developer"
+        company="SENAI"
+        companyUrl=""
+        initialDate="August 2021"
+        finalDate="October 2021"
+        description={
+          <Stack gap={16} flexDirection="column">
+            <Paragraph>
+              I was part of a multidisciplinary team, developing ecommerces for
+              small businesses and being responsible for implementing the design
+              system and maintaining the frontend of the Ultracar workshop
+              management platform.
+            </Paragraph>
+            <Paragraph>
+              SENAI - National Service for Industrial Learning is one of the
+              five largest professional education entities in the world and the
+              largest in Latin America. Its courses train professionals for 28
+              areas of the Brazilian industry - from professional initiation to
+              undergraduate and graduate technology courses.
+            </Paragraph>
+          </Stack>
+        }
+      />
+    ),
+  },
+  {
+    title: "Intelitrader",
+    content: (
+      <ExperienceItem
+        title="Frontend Developer"
+        company="Intelitrader"
+        companyUrl=""
+        initialDate="September 2020"
+        finalDate="August 2021"
+        description={
+          <Paragraph>
+            I worked as a Frontend developer, developing a CSS framework to help
+            the development of current and new features of the company and being
+            responsible for new features and maintenance of InteliRisk, a
+            flexible pre and post trade risk system.
+          </Paragraph>
+        }
+      />
+    ),
+  },
+  {
+    title: "SESI",
+    content: (
+      <ExperienceItem
+        title="Frontend Developer"
+        company="SESI"
+        companyUrl=""
+        initialDate="April 2019"
+        finalDate="June 2020"
+        description={
+          <Paragraph>
+            Developed a plan that aimed to provide mini weather stations for
+            schools, for the development of practical activities on STEM, and
+            for small farmers, to help control their plantation.
+          </Paragraph>
+        }
+      />
+    ),
   },
 ];
 
@@ -89,7 +193,10 @@ function About() {
           </Section>
 
           <Section id="worked">
-            <Heading level={2}>Where I’ve worked</Heading>
+            <Heading level={2} mb="24">
+              Where I’ve worked
+            </Heading>
+            <Tabs items={WORKED_ITEMS} />
           </Section>
 
           <Section id="present">

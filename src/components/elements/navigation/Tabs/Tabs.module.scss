@@ -1,0 +1,53 @@
+@import "@styles/tokens/fonts", "@styles/tokens/colors";
+
+.tabs {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 28px;
+
+  width: 100%;
+
+  &__sidebar {
+    &__item {
+      width: 160px;
+
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+
+      font-family: $fonts-heading;
+      font-size: 14px;
+      font-weight: 600;
+      color: $colors-gray-200;
+      border-left: 2px solid transparent;
+
+      cursor: pointer;
+
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $colors-gray-50;
+        color: $colors-gray-400;
+      }
+
+      &_active {
+        color: $colors-gray-900;
+        border-left-color: $colors-gray-900;
+      }
+    }
+  }
+
+  &__content {
+    flex: 1;
+
+    &__item {
+      width: 100%;
+
+      &_hidden {
+        display: none;
+      }
+    }
+  }
+}
