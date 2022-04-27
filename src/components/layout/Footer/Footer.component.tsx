@@ -1,12 +1,13 @@
-import { Heading, Link, Paragraph } from "@components/elements";
+import { EMAIL_CONTACT, Heading, Link, Paragraph } from "@components/elements";
 import { BoxComponent, BoxComponentProps } from "@core/shared/components";
+import { HEADER_PAGES, HEADER_SOCIALS } from "../Header/Header.data";
 import { Stack } from "../Stack/Stack.component";
 
 import styles from "./Footer.module.scss";
 
 interface FooterProps extends BoxComponentProps {}
 
-export function Footer({...props}: FooterProps) {
+export function Footer({ ...props }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
@@ -22,27 +23,26 @@ export function Footer({...props}: FooterProps) {
             <div>
               <Heading level={6}>Pages</Heading>
               <Stack flexDirection="column">
-                <Link href="/">
-                  <a>Home</a>
-                </Link>
-                <Link href="/">
-                  <a>About</a>
-                </Link>
-                <Link href="/">
-                  <a>Bookmarks</a>
-                </Link>
-                <Link href="/">
-                  <a>Projects</a>
-                </Link>
+                {HEADER_PAGES.map((i, index) => (
+                  <Link key={index} {...i}>
+                    <a>{i.label}</a>
+                  </Link>
+                ))}
               </Stack>
             </div>
 
             <div>
               <Heading level={6}>Contact</Heading>
               <Stack flexDirection="column">
-                <Link href="/">
+                <Link href={`mailto: ${EMAIL_CONTACT}`}>
                   <a>Send a email</a>
                 </Link>
+
+                {HEADER_SOCIALS.map((i, index) => (
+                  <Link key={index} {...i}>
+                    <a target="_blank">{i.label}</a>
+                  </Link>
+                ))}
               </Stack>
             </div>
           </div>

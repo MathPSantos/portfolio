@@ -4,7 +4,7 @@ import styles from "./EmailContact.module.scss";
 
 interface EmailContactProps extends BoxComponentProps {}
 
-const EMAIL_CONTACT = "mathsantos.dev@gmail.com";
+export const EMAIL_CONTACT = "mathsantos.dev@gmail.com";
 
 export function EmailContact({ ...props }: EmailContactProps) {
   return (
