@@ -17,7 +17,7 @@ const SPY_LIST_ITEMS = [
   },
   {
     id: "contact",
-    label: "First contact with tech",
+    label: "First contact",
   },
   {
     id: "worked",
