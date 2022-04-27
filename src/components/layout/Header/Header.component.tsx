@@ -34,9 +34,9 @@ export function Header() {
           </NextLink>
 
           <div className={styles.actions}>
-            <MoonIcon />
+            {/* <MoonIcon /> */}
 
-            <GlobeIcon />
+            {/* <GlobeIcon /> */}
 
             <div
               onClick={toggleIsNavOpen}
@@ -61,8 +61,10 @@ export function Header() {
 
                 <Stack flexDirection="column" gap={12}>
                   {HEADER_SOCIALS.map((i) => (
-                    <Link key={i.href} href={i.href}>
-                      <a>{i.label}</a>
+                    <Link key={i.href} {...i}>
+                      <a target="_blank" rel="noreferrer">
+                        {i.label}
+                      </a>
                     </Link>
                   ))}
                 </Stack>
@@ -73,7 +75,7 @@ export function Header() {
 
                 <Stack flexDirection="column" gap={12}>
                   {HEADER_PAGES.map((i) => (
-                    <Link key={i.href} href={i.href} size="xl">
+                    <Link key={i.href} size="xl" {...i}>
                       <a>{i.label}</a>
                     </Link>
                   ))}

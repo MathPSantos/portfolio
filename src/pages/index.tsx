@@ -38,7 +38,7 @@ function Home() {
     <Layout>
       <HeroSection
         preTitle="Hey, I’m Matheus Santos"
-        title="Front End Developer and Designer and Myself"
+        title="Frontend Developer and Designer and Myself"
         description={
           <>
             I’m a software enginner (sometimes a designer), always seeking to
