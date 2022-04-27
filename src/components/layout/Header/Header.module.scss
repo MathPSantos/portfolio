@@ -112,6 +112,8 @@
   }
 
   &__content {
+    position: relative;
+
     height: 100%;
 
     display: flex;
@@ -133,4 +135,14 @@
       gap: 24px;
     }
   }
+}
+
+.illustration {
+  position: absolute;
+  bottom: -60%;
+  right: -80%;
+
+  z-index: -1;
+
+  transform: rotate(-150deg);
 }

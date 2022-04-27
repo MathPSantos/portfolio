@@ -4,6 +4,7 @@ import { Section } from "../Section/Section.component";
 import { MAX_WIDTH_TEXT } from "@styles/contants";
 
 import styles from "./HeroSection.module.scss";
+import Image from "next/image";
 
 interface HeroSectionProps {
   preTitle?: string;
@@ -30,6 +31,15 @@ export function HeroSection({
 
         {PosDescElement}
       </Section>
+
+      <div className={styles.background}>
+        <Image
+          src="/assets/background.svg"
+          alt="Background Illustration"
+          height={704}
+          width={968}
+        />
+      </div>
     </div>
   );
 }

@@ -88,6 +88,16 @@ export function Header() {
               <EmailContact mt="12" />
             </footer>
           </div>
+
+          {/* Background Illustration */}
+          <div className={styles.illustration}>
+            <Image
+              src="/assets/background.svg"
+              alt="Background Illustration"
+              height={704}
+              width={968}
+            />
+          </div>
         </nav>
 
         {/* Overflow */}
