@@ -1,3 +1,9 @@
+import { GetStaticProps } from "next";
+import { useRouter } from "next/router";
+import { gql } from "@apollo/client";
+
+import client from "@apolloClient";
+
 import { Section, HeroSection, Splitshow, Layout } from "@components/layout";
 import { ProjectItem } from "@components/widgets";
 import {
@@ -11,27 +17,15 @@ import {
 
 import { OwnLeftArrowIcon } from "@core/shared/icons";
 import { BoxComponent } from "@core/shared/components";
-import { Project } from "@core/types/projects/Project";
 
 import { MAX_WIDTH_TEXT } from "@styles/contants";
-import { useRouter } from "next/router";
+import { Project } from "@core/types/projects/Project";
 
-const PROJECTS_DATA: Project[] = [
-  {
-    title: "financee.",
-    description:
-      "A mobile app to help you centralize your incomes, withdraws and investments.",
-    tags: ["Product", "Design", "Code", "Mobile"],
-  },
-  {
-    title: "Taco app",
-    description:
-      "Platform made to help nutricionists to consult the Brazilian Table of Food Composition (TACO).",
-    tags: ["Design", "Code", "Mobile", "Web"],
-  },
-];
+interface HomeProps {
+  projects: Project[];
+}
 
-function Home() {
+function Home({ projects }: HomeProps) {
   const router = useRouter();
 
   return (
@@ -89,7 +83,7 @@ function Home() {
         <Splitshow
           mt="60"
           isAlined
-          items={PROJECTS_DATA}
+          items={projects}
           ChildComponent={ProjectItem}
         />
 
@@ -112,5 +106,24 @@ function Home() {
     </Layout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await client.query({
+    query: gql`
+      query {
+        projects {
+          title
+          slug
+          shortDescription
+          tags
+        }
+      }
+    `,
+  });
+
+  return {
+    props: { projects: data.projects },
+  };
+};
 
 export default Home;

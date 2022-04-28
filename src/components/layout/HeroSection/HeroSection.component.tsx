@@ -9,7 +9,7 @@ import Image from "next/image";
 interface HeroSectionProps {
   preTitle?: string;
   title: string;
-  description: string | JSX.Element;
+  description?: string | JSX.Element;
   PosDescElement?: JSX.Element;
 }
 
@@ -23,11 +23,14 @@ export function HeroSection({
     <div className={styles.container}>
       <Section>
         {preTitle && <Paragraph mb="16">{preTitle}</Paragraph>}
+
         <Heading>{title}</Heading>
 
-        <Paragraph mt="24" maxW={MAX_WIDTH_TEXT}>
-          {description}
-        </Paragraph>
+        {description && (
+          <Paragraph mt="24" maxW={MAX_WIDTH_TEXT}>
+            {description}
+          </Paragraph>
+        )}
 
         {PosDescElement}
       </Section>

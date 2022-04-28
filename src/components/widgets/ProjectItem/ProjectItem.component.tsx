@@ -1,7 +1,9 @@
-import { Heading, Paragraph, Tag } from "@components/elements";
+import { Heading, Link, Paragraph, Tag } from "@components/elements";
 import { Stack } from "@components/layout";
-import { Project } from "@core/types/projects/Project";
 import Image from "next/image";
+import { useRouter } from "next/router";
+
+import { Project } from "@core/types/projects/Project";
 
 import styles from "./ProjectItem.module.scss";
 
@@ -10,10 +12,16 @@ export interface ProjectItemProps {
 }
 
 export function ProjectItem({ data }: ProjectItemProps) {
-  const { title, description, image_url, tags } = data;
+  const router = useRouter();
+
+  const { slug, title, shortDescription, image_url, tags } = data;
+
+  function handleClick() {
+    router.push(`/projects/${slug}`);
+  }
 
   return (
-    <div className={styles.projectItem}>
+    <div className={styles.projectItem} onClick={handleClick}>
       <div className={styles.projectItem__image}>
         {image_url && <Image src={image_url} alt={title} />}
       </div>
@@ -21,7 +29,7 @@ export function ProjectItem({ data }: ProjectItemProps) {
       <div className={styles.projectItem__content}>
         <Heading level={3}>{title}</Heading>
         <Paragraph mt="12" mb="16">
-          {description}
+          {shortDescription}
         </Paragraph>
         <Stack gap={8} flexWrap="wrap">
           {tags?.map((tag, index) => (
