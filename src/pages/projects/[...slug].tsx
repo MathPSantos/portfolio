@@ -67,8 +67,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const { projects } = data;
 
-  console.log(projects);
-
   return {
     props: {
       data: projects[0],

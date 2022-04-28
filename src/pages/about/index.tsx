@@ -7,6 +7,7 @@ import {
 } from "@components/elements";
 import { HeroSection, Layout, Section, Stack } from "@components/layout";
 import { ExperienceItem } from "@components/widgets";
+import { GetServerSideProps } from "next";
 
 import styles from "./About.module.scss";
 
@@ -233,5 +234,12 @@ function About() {
     </Layout>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    props: {},
+    redirect: "/maintenance",
+  };
+};
 
 export default About;
