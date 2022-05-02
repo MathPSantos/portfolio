@@ -3,6 +3,8 @@
 .container {
   padding-right: $spacing-5;
   padding-left: $spacing-5;
+
+  overflow: hidden;
 }
 
 .content {
